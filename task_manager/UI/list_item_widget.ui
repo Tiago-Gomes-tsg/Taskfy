@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>task_Title</class>
+ <widget class="QWidget" name="task_Title">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>854</width>
+    <height>116</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: #ff8ba7;
+border: 0;
+border-radius: 0;
+color: black;
+margin: 0;
+padding: 0;
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>2</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="layout_task">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" name="title_task_layout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QCheckBox" name="complete_taskcheckbox">
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">margin: 0;
+border: 2px solid black;
+border-right: none;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+padding: 0px 0px 0px 16px;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="title_task">
+         <property name="minimumSize">
+          <size>
+           <width>600</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>600</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>13</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 2px solid black;
+border-left: none;
+border-right:none;
+padding: 0px 5px;
+font: bold;</string>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="edit_taskbtn">
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">margin: 0;
+border: 2px solid black;
+border-left: none;
+border-right: none;</string>
+         </property>
+         <property name="text">
+          <string>Edit</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>assets/edit_icon.svg</normaloff>assets/edit_icon.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="arrow_down_btn">
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">margin: 0;
+border: 2px solid black;
+border-left: none;
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>assets/arrow_down_icon.svg</normaloff>assets/arrow_down_icon.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="delete_btn">
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">margin: 0;;
+border: 2px solid black;
+border-left: none;
+border-right: none;
+border-radius: 0px;
+border-top-left-radius: none;
+border-bottom-left-radius: none;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>assets/trash_icon.svg</normaloff>assets/trash_icon.svg</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="category_btn">
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">margin: 0;;
+border: 2px solid black;
+border-left: none;
+border-radius: 10px;
+border-top-left-radius: none;
+border-bottom-left-radius: none;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>assets/three-dots-vertical-svgrepo-com.svg</normaloff>assets/three-dots-vertical-svgrepo-com.svg</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="title_task_edit">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>13</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">padding: 0px 0px 0px 25px;
+border: 2px solid black;
+border-radius: 10px</string>
+       </property>
+       <property name="maxLength">
+        <number>60</number>
+       </property>
+       <property name="placeholderText">
+        <string>Title task...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="task_desc_edit">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">padding: 0px 0px 0px 5px;
+border: 2px solid black;
+border-radius: 10px</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="markdown">
+        <string>`Lorem ipsum dolor sit amet. Ut voluptatum molestiae qui odio repudiandae et
+harum quisquam. Ad adipisci omnis qui adipisci error eum beatae molestiae? Est
+mollitia consequatur non facere voluptatem ut dolorem necessitatibus.   Id
+necessitatibus error ea voluptates eligendi non molestiae ipsam aut quasi
+cumque in ullam possimus. Sit vero voluptatem At facere praesentium qui dicta
+tempore aut laborum odit et odit aliquam ut neque modi. Ea beatae tempore qui
+repudiandae quaerat a incidunt sint.   Qui libero Quis aut dolore autem et
+deserunt velit qui laboriosam asperiores et enim architecto et voluptas
+praesentium et ipsum perferendis. Non voluptatum sint sit inventore ducimus ut
+sunt ratione qui voluptas impedit ea quia obcaecati. Sed laudantium alias est
+minima eveniet aut enim beatae qui incidunt possimus quo nulla voluptatibus eum
+enim nulla.`
+
+</string>
+       </property>
+       <property name="placeholderText">
+        <string>Description...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QScrollArea" name="scroll_area_categories">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background: transparent;</string>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollWidgetCategories">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>500</width>
+          <height>18</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>500</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 5px;
+border: 2px solid black;
+border-radius: 10px;
+background: #f3d2c1;</string>
+        </property>
+        <layout class="QVBoxLayout" name="scroll_layout_categories"/>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

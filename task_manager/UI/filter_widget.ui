@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>filterWidget</class>
+ <widget class="QWidget" name="filterWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: white;
+border: 1px solid black;
+border-radius: 10px;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="styleSheet">
+        <string notr="true">border: 2px solid black;
+border-radius: 5px;
+background: #f3d2c1;
+padding: 10px;
+</string>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollWidgetCategory">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>356</width>
+          <height>214</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0;
+margin: 0;
+padding: 0;</string>
+        </property>
+        <layout class="QVBoxLayout" name="scroll_categories_layout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>5</number>
+         </property>
+         <property name="topMargin">
+          <number>5</number>
+         </property>
+         <property name="rightMargin">
+          <number>5</number>
+         </property>
+         <property name="bottomMargin">
+          <number>5</number>
+         </property>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="apply_filter_btn">
+       <property name="styleSheet">
+        <string notr="true">margin: 5px 0px 5px 0px;
+padding: 2px 0px 2px 5px;
+border: 2px solid black;
+border-radius: 10px;
+color: black;
+background: white;
+font: bold;</string>
+       </property>
+       <property name="text">
+        <string>Apply Filter</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
