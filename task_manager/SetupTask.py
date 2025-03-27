@@ -3,6 +3,8 @@ from task_manager.SetupCategory import categoryWidgetItems
 from task_manager.UI.task_itemsUI import Ui_task_Title
 from PySide6.QtWidgets import QWidget, QApplication
 from task_manager.models.task import Task
+from PySide6.QtGui import QIcon, QPixmap
+import os
 import sys
 
 class taskWidgetItem(QWidget, Ui_task_Title, QObject):
@@ -30,6 +32,14 @@ class taskWidgetItem(QWidget, Ui_task_Title, QObject):
         self.edit_taskbtn.clicked.connect(self.edit_desc)
         self.title_task_edit.returnPressed.connect(self.edit_title)
         self.complete_taskcheckbox.stateChanged.connect(self.on_checkbox_state_changed)
+        
+        
+        self.edit_taskbtn.setIcon(QPixmap(self.resource_path("assets/edit_icon.svg")))
+        self.arrow_down_btn.setIcon(QIcon(self.resource_path("assets/arrow_down_icon.svg")))
+        self.category_btn.setIcon(QIcon(self.resource_path("assets/three-dots-vertical-svgrepo-com.svg")))
+        self.delete_btn.setIcon(QIcon(self.resource_path("assets/trash_icon.svg")))
+
+    
         
 
 #-----------------------------------------------------------------------------------------------------------------------------
@@ -100,6 +110,10 @@ class taskWidgetItem(QWidget, Ui_task_Title, QObject):
 # FEATURES                                                                                                                   #
 #-----------------------------------------------------------------------------------------------------------------------------
 
+    def resource_path(self, relative_path):
+            if hasattr(sys, '_MEIPASS'):
+                return os.path.join(sys._MEIPASS, relative_path)
+            return os.path.join(os.path.abspath("."), relative_path)
     
     def edit_title(self):
         new_title = self.title_task_edit.text()

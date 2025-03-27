@@ -56,12 +56,12 @@ class mainWindowWidget(QMainWindow, Ui_MainWindow):
         self.update_chart()
         self.tsk_features.task_updated.connect(self.update_chart)
         
-        self.setWindowIcon(QIcon("assets/icon.svg"))
-        self.app_icon.setPixmap(QPixmap("assets/icon.svg"))
-        self.button_tasks.setIcon(QIcon("assets/task_icon.svg"))
-        self.button_categories.setIcon(QIcon("assets/settings_icon.svg"))
-        self.add_new_item.setIcon(QIcon("assets/addTask_icon.svg"))
-        self.filter_btn.setIcon(QIcon("assets/filter-list-svgrepo-com.svg"))
+        self.setWindowIcon(QIcon(self.resource_path("assets/icon.svg")))
+        self.app_icon.setPixmap(QPixmap(self.resource_path("assets/icon.svg")))
+        self.button_tasks.setIcon(QIcon(self.resource_path("assets/task_icon.svg")))
+        self.button_categories.setIcon(QIcon(self.resource_path("assets/settings_icon.svg")))
+        self.add_new_item.setIcon(QIcon(self.resource_path("assets/addTask_icon.svg")))
+        self.filter_btn.setIcon(QIcon(self.resource_path("assets/filter-list-svgrepo-com.svg")))
         
         
 #-----------------------------------------------------------------------------------------------------------------------------
@@ -122,6 +122,11 @@ class mainWindowWidget(QMainWindow, Ui_MainWindow):
 #-----------------------------------------------------------------------------------------------------------------------------
 # FEATURES                                                                                                                   #
 #-----------------------------------------------------------------------------------------------------------------------------
+
+    def resource_path(self, relative_path):
+            if hasattr(sys, '_MEIPASS'):
+                return os.path.join(sys._MEIPASS, relative_path)
+            return os.path.join(os.path.abspath("."), relative_path)
 
     def update_chart(self):
         completed = self.tsk_features.count_completed_tasks()
@@ -388,6 +393,13 @@ class categoryCrudItems(QWidget, Ui_category_list_items):
         self.animation_delete = QPropertyAnimation(self, b'maximumSize')
         self.animation_delete.setDuration(300)
         self.animation_delete.setEasingCurve(QEasingCurve.InOutQuad)
+        
+        self.delete_category_btn.setIcon(QIcon(self.resource_path("assets/trash_icon.svg")))
+        
+    def resource_path(self, relative_path):
+        if hasattr(sys, '_MEIPASS'):
+            return os.path.join(sys._MEIPASS, relative_path)
+        return os.path.join(os.path.abspath("."), relative_path)
         
     def remove_category(self):
         self.tsk_features.delete_category(self.category_id)
