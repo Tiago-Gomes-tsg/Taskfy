@@ -11,12 +11,12 @@ Um aplicativo desktop para gerenciamento de tarefas pessoais, desenvolvido com P
 - ✅ Gráficos de produtividade (Matplotlib)
 - ✅ Persistência de dados com SQLite3
 
-## 🛠️ Tecnologias e Habilidades Demonstradas
+## 🛠️ Tecnologias e Habilidades
 
 - **Python 3** (POO, manipulação de dados)
 - **PySide6 (Qt)**: Interface gráfica moderna
 - **SQLite3**: Armazenamento local de tarefas
-- **Matplotlib**: Visualização de dados (opcional)
+- **Matplotlib**: Visualização de dados
 - **Design Patterns**: MVC (Model-View-Controller)
 - **Boas práticas**: Clean Code, documentação
 
