@@ -1,7 +1,9 @@
 from PySide6.QtCore import QObject, Signal, QTimer
 from functools import wraps
+import time
 from pathlib import Path
 import sqlite3
+import sys
 
 class Task(QObject):
     task_updated = Signal()
@@ -9,8 +11,14 @@ class Task(QObject):
         super().__init__()
         
         #Connection to DB
-        main_directory = (Path(__file__).parent.parent.parent).resolve()
-        self.tasks_path = main_directory /"data"/"tasks.sqlite3"
+        if getattr(sys, 'frozen', False):
+            main_directory = Path(sys.executable).parent
+        else:
+            main_directory = Path(__file__).parent.parent.parent
+            
+        self.tasks_path = main_directory / "data" / "tasks.sqlite3"
+        self.tasks_path.parent.mkdir(parents=True, exist_ok=True)
+
         
         
     @staticmethod
@@ -39,7 +47,7 @@ class Task(QObject):
 #-----------------------------------------------------------------------------------------------------------------------------
     
     @manage_connection
-    def new_task(self, title = 'New task', desc = '', status = 0):
+    def new_task(self, title = 'New task', desc = '', status = 0) -> None:
         query = """
         INSERT INTO tasks (title, desc, status) VALUES (?, ?, ?)
         """
@@ -182,7 +190,7 @@ class Task(QObject):
             raise
 
     @manage_connection
-    def update_temp_table(self, category_ids):
+    def update_temp_table(self, category_ids) -> None:
         try:
             self.cursor.execute("DELETE FROM filtered_tasks")
             print("Table filtered_tasks successfully cleared")
@@ -225,7 +233,7 @@ class Task(QObject):
             print(f"Category {category_name} already exists")
     
     @manage_connection
-    def if_find_in(self, task_id, category_id):
+    def if_find_in(self, task_id, category_id) -> bool:
         try:
             self.cursor.execute(
                 """
@@ -240,7 +248,7 @@ class Task(QObject):
             return False
     
     @manage_connection           
-    def link_task_to_category(self, task_id, category_name):
+    def link_task_to_category(self, task_id, category_name) -> None:
         try:
             self.cursor.execute(
                 """
@@ -260,7 +268,7 @@ class Task(QObject):
             print(f"Task already associated with category {category_name}")
     
     @manage_connection
-    def unlink_task_from_category(self,task_id, category_id):
+    def unlink_task_from_category(self,task_id, category_id) -> None:
         try:
             self.cursor.execute(
                 """
@@ -272,7 +280,7 @@ class Task(QObject):
             print("Error when dissociating task from category")
      
     @manage_connection       
-    def delete_category(self, category_id):
+    def delete_category(self, category_id) -> None:
         try:
             self.cursor.execute("DELETE FROM task_categories WHERE category_id = ?", (category_id,))
 
@@ -317,7 +325,7 @@ class Task(QObject):
         print("The task table has been created or already exists")
     
     @manage_connection
-    def new_categorie_table(self):
+    def new_categorie_table(self) -> None:
         self.cursor.execute(
             """
             CREATE TABLE IF NOT EXISTS categories (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE)
@@ -326,7 +334,7 @@ class Task(QObject):
         print("The category table has been created or already exists")
      
     @manage_connection   
-    def new_task_categories_table(self):
+    def new_task_categories_table(self) -> None:
         self.cursor.execute(
             """
             CREATE TABLE IF NOT EXISTS task_categories (
@@ -340,7 +348,7 @@ class Task(QObject):
         print("The relation task_categories table has been created or already exists")
     
     @manage_connection
-    def new_filtered_task_table(self):
+    def new_filtered_task_table(self) -> None:
         self.cursor.execute(
             """
             CREATE TABLE IF NOT EXISTS filtered_tasks (
